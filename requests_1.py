@@ -41,3 +41,9 @@ def publish_report(path, link, articles):
 
 if __name__ == '__main__':
     publish_report(jpath, url, find_articles(get_html_page(url)))
+    with open(jpath, 'r', encoding='utf-8') as fl:
+        all_data = json.load(fl)
+    habr_titles = all_data['articles']
+    for h in habr_titles:
+        print(h['title'])
+    # print(find_articles(get_html_page(url)))
