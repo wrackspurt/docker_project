@@ -4,10 +4,10 @@ import requests
 from bs4 import BeautifulSoup
 
 
-url = 'https://habr.com/ru/news/'
+url = 'https://arstechnica.com/gadgets/'
 current = datetime.datetime.now()
 creation_date = current.strftime("%d-%m-%y")
-jpath = 'articles.json'
+jpath = 'arsarticles.json'
 
 
 def get_html_page(link):
@@ -18,34 +18,16 @@ def get_html_page(link):
 
 def find_articles_data(html_page, type_data):
     parsed_page = BeautifulSoup(html_page, 'html.parser')
-    data = parsed_page.find_all('a', class_='tm-article-snippet__title-link', href=True)
+    data = parsed_page.find_all('h2')
     result_list = list()
     if type_data == 'titles':
         for d in data:
             result_list.append(d.text)
     elif type_data == 'urls':
         for d in data:
-            result_list.append('https://habr.com' + str(d['href']))
+            for i in d.find_all('a', href=True):
+                result_list.append(i['href'])
     return result_list
-
-
-"""def find_articles(html_page):
-    parsed_page = BeautifulSoup(html_page, 'html.parser')
-    headings = parsed_page.find_all('a', class_='tm-article-snippet__title-link')
-    quantity = len(headings)
-    title_list = list()
-    for i in range(quantity):
-        title_list.append(headings[i].text)
-    return title_list"""
-
-
-"""def find_links(html_page):
-    parsed_page = BeautifulSoup(html_page, 'html.parser')
-    urls = parsed_page.find_all('a', class_='tm-article-snippet__title-link', href=True)
-    links_list = list()
-    for i in urls:
-        links_list.append('https://habr.com' + str(i['href']))
-    return links_list"""
 
 
 def publish_report(path, link, articles, links):
@@ -66,7 +48,7 @@ if __name__ == '__main__':
     publish_report(jpath, url, find_articles_data(page, 'titles'), find_articles_data(page, 'urls'))
     with open(jpath, 'r', encoding='utf-8') as fl:
         all_data = json.load(fl)
-    habr_titles = all_data['articles']
-    for h in habr_titles:
-        print(h['title'], ': ', h['link'])
+    ars_titles = all_data['articles']
+    for a in ars_titles:
+        print(a['title'], ': ', a['link'])
     # print(find_articles(get_html_page(url)))
