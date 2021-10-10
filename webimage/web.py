@@ -1,8 +1,8 @@
 from flask import Flask, render_template, redirect, url_for, request
 import json
 
-ARS_PATH = 'C:/Users/lizzi/GitHub/docker_project/arsnewsimage/arsarticles.json'
-HABR_PATH = 'C:/Users/lizzi/GitHub/docker_project/habrnewsimage/habrarticles.json'
+ARS_PATH = 'arsarticles.json'
+HABR_PATH = 'habrarticles.json'
 
 app = Flask(__name__)
 

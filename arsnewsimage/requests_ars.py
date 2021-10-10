@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 url = 'https://arstechnica.com/gadgets/'
 current = datetime.datetime.now()
 creation_date = current.strftime("%d-%m-%y")
-jpath = 'arsarticles.json'
+jpath = '/webimage/arsarticles.json'
 
 
 def get_html_page(link):

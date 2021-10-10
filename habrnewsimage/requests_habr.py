@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 url = 'https://habr.com/ru/news/'
 current = datetime.datetime.now()
 creation_date = current.strftime("%d-%m-%y")
-jpath = 'habrarticles.json'
+jpath = 'webimage/habrarticles.json'
 
 
 def get_html_page(link):
