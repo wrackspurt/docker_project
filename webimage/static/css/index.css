@@ -1,0 +1,158 @@
+html {
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(to top, #F3DBCF, #AAC9CE) no-repeat center center fixed;
+    background-size: cover;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #16A5A3;
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@font-face {
+	font-family: Century Gothic;
+    src: url(fonts/11528.ttf);
+   }
+
+   h1 {
+	   font-family: Century Gothic;
+	   color: #0e4242;
+   }
+
+   h1:hover {
+      color: #16A5A3;
+   }
+
+   h2 {
+      font-family: Century Gothic;
+      color: #0e4242;
+   }
+
+   h2:hover {
+      color: #16A5A3;
+   }
+
+   li {
+	   font-family: Century Gothic;
+	   color: #0e4242;
+	   line-height: 30px;
+   }
+
+   li:hover {
+	   color: #16A5A3;
+   }
+
+   .refreshBtn {
+       background-color: transparent;
+       background-repeat: no-repeat;
+       border: 2px solid #16A5A3;
+       border-radius: 30px;
+       cursor: pointer;
+       font-family: Century Gothic;
+       font-weight: bold;
+       font-size: 12pt;
+       color: #16A5A3;
+       height:50px;
+       width:100px;
+       position: absolute;
+       top: 15px;
+       left: 1000px;
+    }
+
+    .refreshBtn:hover {
+       border: 2px solid #0e4242;
+       border-radius: 30px;
+       color: #0e4242;
+    }
+
+    .refreshBtn:focus {
+       outline: 0 !important;
+    }
+
+    .backBtn {
+       background-color: transparent;
+       background-repeat: no-repeat;
+       border: 2px solid #16A5A3;
+       border-radius: 30px;
+       cursor: pointer;
+       font-family: Century Gothic;
+       font-weight: bold;
+       font-size: 12pt;
+       color: #16A5A3;
+       height:50px;
+       width:100px;
+       position: absolute;
+       top: 15px;
+       left: 500px;
+    }
+
+    .backBtn:hover {
+       border: 2px solid #0e4242;
+       border-radius: 30px;
+       color: #0e4242;
+    }
+
+    .backBtn:focus {
+       outline: 0 !important;
+    }
+
+    .goBtn {
+       background-color: #AAC9CE;
+       background-repeat: no-repeat;
+       border: 2px solid ;
+       border-radius: 30px;
+       cursor: pointer;
+       font-family: Century Gothic;
+       font-weight: bold;
+       font-size: 12pt;
+       color: #16A5A3;
+       height:45px;
+       width:100px;
+       margin: 10px;
+
+    }
+
+    .goBtn:hover {
+       border: 2px solid #0e4242;
+       border-radius: 30px;
+       color: #0e4242;
+    }
+
+    .goBtn:focus {
+       outline: 0 !important;
+    }
+
+    .selectSource {
+       font-family: Century Gothic;
+       font-weight: bold;
+       background-color: #AAC9CE;
+       border: 2px #16A5A3 solid;
+       border-radius: 25px;
+       color: #16A5A3;
+       width: 120px;
+       height: 35px;
+    }
+
+    .selectSource:focus {
+       outline: 0 !important;
+    }
+
+    .pic {
+       margin: 20px;
+
+    }
