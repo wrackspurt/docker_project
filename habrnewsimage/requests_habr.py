@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 url = 'https://habr.com/ru/news/'
 current = datetime.datetime.now()
 creation_date = current.strftime("%d-%m-%y")
-jpath = 'webimage/habrarticles.json'
+jpath = '/storage/data/habrarticles.json'
 
 
 def get_html_page(link):
@@ -62,11 +62,12 @@ def publish_report(path, link, articles, links):
 
 
 if __name__ == '__main__':
-    page = get_html_page(url)
-    publish_report(jpath, url, find_articles_data(page, 'titles'), find_articles_data(page, 'urls'))
-    with open(jpath, 'r', encoding='utf-8') as fl:
-        all_data = json.load(fl)
-    habr_titles = all_data['articles']
-    for h in habr_titles:
-        print(h['title'], ': ', h['link'])
+    while True:
+        page = get_html_page(url)
+        publish_report(jpath, url, find_articles_data(page, 'titles'), find_articles_data(page, 'urls'))
+        with open(jpath, 'r', encoding='utf-8') as fl:
+            all_data = json.load(fl)
+        habr_titles = all_data['articles']
+        # for h in habr_titles:
+        #    print(h['title'], ': ', h['link'])
     # print(find_articles(get_html_page(url)))

@@ -1,8 +1,10 @@
 from flask import Flask, render_template, redirect, url_for, request
 import json
 
-ARS_PATH = 'arsarticles.json'
-HABR_PATH = 'habrarticles.json'
+# ARS_PATH = '/home/sftp/storage/arsarticles.json'
+ARS_PATH = '/storage/data/arsarticles.json'
+# HABR_PATH = '/home/sftp/storage/habrarticles.json'
+HABR_PATH = '/storage/data/habrarticles.json'
 
 app = Flask(__name__)
 

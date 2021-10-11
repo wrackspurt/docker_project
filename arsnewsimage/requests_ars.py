@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 url = 'https://arstechnica.com/gadgets/'
 current = datetime.datetime.now()
 creation_date = current.strftime("%d-%m-%y")
-jpath = '/webimage/arsarticles.json'
+jpath = '/storage/data/arsarticles.json'
 
 
 def get_html_page(link):
@@ -44,11 +44,12 @@ def publish_report(path, link, articles, links):
 
 
 if __name__ == '__main__':
-    page = get_html_page(url)
-    publish_report(jpath, url, find_articles_data(page, 'titles'), find_articles_data(page, 'urls'))
-    with open(jpath, 'r', encoding='utf-8') as fl:
-        all_data = json.load(fl)
-    ars_titles = all_data['articles']
-    for a in ars_titles:
-        print(a['title'], ': ', a['link'])
-    # print(find_articles(get_html_page(url)))
+    while True:
+        page = get_html_page(url)
+        publish_report(jpath, url, find_articles_data(page, 'titles'), find_articles_data(page, 'urls'))
+        with open(jpath, 'r', encoding='utf-8') as fl:
+            all_data = json.load(fl)
+        ars_titles = all_data['articles']
+        # for a in ars_titles:
+        #    print(a['title'], ': ', a['link'])
+        # print(find_articles(get_html_page(url)))

@@ -3,13 +3,22 @@ services:
   web:
     build: webimage/
     command: python ./web.py
+    volumes:
+      - storage:/storage/data:rw
     ports:
       - 8000:8000
 
   habr:
     build: habrnewsimage/
     command: python ./requests_habr.py
+    volumes:
+      - storage:/storage/data:rw
 
   ars:
     build: arsnewsimage/
     command: python ./requests_ars.py
+    volumes:
+      - storage:/storage/data:rw
+
+volumes:
+  storage:
