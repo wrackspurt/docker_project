@@ -2,7 +2,9 @@ import datetime
 import json
 import requests
 from bs4 import BeautifulSoup
+import urllib3
 
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 url = 'https://habr.com/ru/news/'
 current = datetime.datetime.now()
