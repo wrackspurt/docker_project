@@ -1,10 +1,11 @@
 from flask import Flask, render_template, redirect, url_for, request
 import json
 
-# ARS_PATH = '/home/sftp/storage/arsarticles.json'
-ARS_PATH = '/storage/data/arsarticles.json'
-# HABR_PATH = '/home/sftp/storage/habrarticles.json'
-HABR_PATH = '/storage/data/habrarticles.json'
+
+# ARS_PATH = '/storage/data/arsarticles.json'
+# HABR_PATH = '/storage/data/habrarticles.json'
+ARS_PATH = 'C:/Users/lizzi/GitHub/docker_project/arsnewsimage/arsarticles.json'
+HABR_PATH = 'C:/Users/lizzi/GitHub/docker_project/habrnewsimage/habrarticles.json'
 
 app = Flask(__name__)
 
@@ -19,6 +20,7 @@ ars_data = get_articles(ARS_PATH)
 habr_data = get_articles(HABR_PATH)
 # habr_titles = list()
 # habr_links = list()
+# тут лежат словари с заголовками и ссылками
 habr_articles = habr_data['articles']
 # for h in habr_data['articles']:
 #    habr_titles.append(h['title'])
@@ -55,16 +57,6 @@ def post_ars_articles():
                            ars_articles=ars_articles)
 
 
-@app.route('/update_habr', methods=['POST'])
-def update_habr_articles():
-    return redirect(url_for('post_habr_articles'))
-
-
-@app.route('/update_ars', methods=['POST'])
-def update_ars_articles():
-    return redirect(url_for('post_ars_articles'))
-
-
 @app.route('/back', methods=['POST'])
 def back_to_start():
     return redirect(url_for('choose_source'))
@@ -72,4 +64,15 @@ def back_to_start():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8000, debug=True)
+
+
+"""@app.route('/update_habr', methods=['POST'])
+def update_habr_articles():
+    return redirect(url_for('post_habr_articles'))"""
+
+
+"""@app.route('/update_ars', methods=['POST'])
+def update_ars_articles():
+    return redirect(url_for('post_ars_articles'))"""
+
 

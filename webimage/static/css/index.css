@@ -3,25 +3,28 @@ html {
 }
 
 body {
-	background: linear-gradient(to top, #F3DBCF, #AAC9CE) no-repeat center center fixed;
+	background-color: #171516;
     background-size: cover;
 }
 
 a:link {
     text-decoration: none;
+    color: #EDB1EF;
 }
 
 a:visited {
-    color: #16A5A3;
+    color: #EDB1EF;
     text-decoration: none;
 }
 
 a:active {
     text-decoration: none;
+    color: #EDB1EF;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #5D515D;
 }
 
 @font-face {
@@ -31,30 +34,19 @@ a:hover {
 
    h1 {
 	   font-family: Century Gothic;
-	   color: #0e4242;
+	   color: #EDB1EF;
    }
 
-   h1:hover {
-      color: #16A5A3;
-   }
 
    h2 {
       font-family: Century Gothic;
-      color: #0e4242;
-   }
-
-   h2:hover {
-      color: #16A5A3;
+      color: #EDB1EF;
    }
 
    li {
 	   font-family: Century Gothic;
-	   color: #0e4242;
+	   color: #EDB1EF;
 	   line-height: 30px;
-   }
-
-   li:hover {
-	   color: #16A5A3;
    }
 
    .refreshBtn {
@@ -85,15 +77,15 @@ a:hover {
     }
 
     .backBtn {
-       background-color: transparent;
+       background-color: #171516;
        background-repeat: no-repeat;
-       border: 2px solid #16A5A3;
+       border: 2px solid #EDB1EF;
        border-radius: 30px;
        cursor: pointer;
        font-family: Century Gothic;
        font-weight: bold;
        font-size: 12pt;
-       color: #16A5A3;
+       color: #EDB1EF;
        height:50px;
        width:100px;
        position: absolute;
@@ -102,9 +94,9 @@ a:hover {
     }
 
     .backBtn:hover {
-       border: 2px solid #0e4242;
+       border: 2px solid #5D515D;
        border-radius: 30px;
-       color: #0e4242;
+       color: #5D515D;
     }
 
     .backBtn:focus {
@@ -112,7 +104,7 @@ a:hover {
     }
 
     .goBtn {
-       background-color: #AAC9CE;
+       background-color: #171516;
        background-repeat: no-repeat;
        border: 2px solid ;
        border-radius: 30px;
@@ -120,7 +112,7 @@ a:hover {
        font-family: Century Gothic;
        font-weight: bold;
        font-size: 12pt;
-       color: #16A5A3;
+       color: #EDB1EF;
        height:45px;
        width:100px;
        margin: 10px;
@@ -128,9 +120,9 @@ a:hover {
     }
 
     .goBtn:hover {
-       border: 2px solid #0e4242;
+       border: 2px solid #5D515D;
        border-radius: 30px;
-       color: #0e4242;
+       color: #5D515D;
     }
 
     .goBtn:focus {
@@ -140,12 +132,13 @@ a:hover {
     .selectSource {
        font-family: Century Gothic;
        font-weight: bold;
-       background-color: #AAC9CE;
-       border: 2px #16A5A3 solid;
+       background-color: #171516;
+       border: 2px #EDB1EF solid;
        border-radius: 25px;
-       color: #16A5A3;
+       color: #EDB1EF;
        width: 120px;
        height: 35px;
+       cursor: pointer
     }
 
     .selectSource:focus {
@@ -155,4 +148,8 @@ a:hover {
     .pic {
        margin: 20px;
 
+    }
+
+    .center {
+    padding: 250px 0;
     }

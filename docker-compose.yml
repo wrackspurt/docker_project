@@ -1,24 +1,24 @@
 version: "3.9"
 services:
-  web:
-    build: webimage/
-    command: python ./web.py
-    volumes:
-      - storage:/storage/data:rw
-    ports:
-      - 8000:8000
-
   habr:
     build: habrnewsimage/
     command: python ./requests_habr.py
     volumes:
-      - storage:/storage/data:rw
+      - storage:/storage/data
 
   ars:
     build: arsnewsimage/
     command: python ./requests_ars.py
     volumes:
-      - storage:/storage/data:rw
+      - storage:/storage/data
+
+  web:
+    build: webimage/
+    command: python ./web.py
+    volumes:
+      - storage:/storage/data:consistent
+    ports:
+      - 8000:8000
 
 volumes:
   storage:

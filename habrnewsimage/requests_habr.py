@@ -11,7 +11,7 @@ jpath = '/storage/data/habrarticles.json'
 
 
 def get_html_page(link):
-    news_request = requests.get(link)
+    news_request = requests.get(link, verify=False)
     news_content = news_request.text
     return news_content
 

@@ -11,7 +11,7 @@ jpath = '/storage/data/arsarticles.json'
 
 
 def get_html_page(link):
-    news_request = requests.get(link)
+    news_request = requests.get(link, verify=False)
     news_content = news_request.text
     return news_content
 
@@ -32,6 +32,7 @@ def find_articles_data(html_page, type_data):
 
 def publish_report(path, link, articles, links):
     articles_dict = []
+    # создание словарей, хранящих заголовки и ссылки
     for i in range(len(articles)):
         articles_dict.append({"title": articles[i], "link": links[i]})
     titles = {
@@ -47,9 +48,9 @@ if __name__ == '__main__':
     while True:
         page = get_html_page(url)
         publish_report(jpath, url, find_articles_data(page, 'titles'), find_articles_data(page, 'urls'))
-        with open(jpath, 'r', encoding='utf-8') as fl:
-            all_data = json.load(fl)
-        ars_titles = all_data['articles']
+        # with open(jpath, 'r', encoding='utf-8') as fl:
+        #    all_data = json.load(fl)
+        # ars_titles = all_data['articles']
         # for a in ars_titles:
         #    print(a['title'], ': ', a['link'])
         # print(find_articles(get_html_page(url)))
