@@ -16,7 +16,7 @@ services:
     build: webimage/
     command: python ./web.py
     volumes:
-      - storage:/storage/data:consistent
+      - storage:/storage/data
     ports:
       - 8000:8000
 
